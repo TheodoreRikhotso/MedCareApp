@@ -51,8 +51,8 @@ public class AppointmentFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_appointmet, container, false);
-//        toolbar = view.findViewById(R.id.toolbar_appoint);
-//        fabAddApp= view.findViewById(R.id.fabAddApp);
+        toolbar = view.findViewById(R.id.toolbar_appoint);
+        fabAddApp= view.findViewById(R.id.fabAddApp);
 
         toolbar.setTitle("Appointment");
         setHasOptionsMenu(true);
@@ -62,45 +62,58 @@ public class AppointmentFragment extends Fragment {
 
         appointmentDB = FirebaseDatabase.getInstance().getReference("Appointment/"+auth.getUid());
 
-       // rvAppointment = view.findViewById(R.id.rvAppointment);
+        rvAppointment = view.findViewById(R.id.rvAppointment);
 
         appointmentList = new ArrayList<>();
 
 
 
-//        appointmentDB.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                appointmentList.clear();
-//                for (DataSnapshot catalogSnapshot : dataSnapshot.getChildren()) {
-//                    rvAppointment = view.findViewById(R.id.rvAppointment);
-//                    Appointment catalog = catalogSnapshot.getValue(Appointment.class);
-//                    appointmentList.add(catalog);
-//
-//                    layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//                    appointmentAdapter = new AppointmentAdapter(getActivity(), appointmentList);
-//
-//                    rvAppointment.setLayoutManager(layoutManager);
-//
-//                    rvAppointment.setAdapter(appointmentAdapter);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-//
-//
-//        fabAddApp.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), AddAppointmentActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        appointmentDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                appointmentList.clear();
+                for (DataSnapshot catalogSnapshot : dataSnapshot.getChildren()) {
+                    rvAppointment = view.findViewById(R.id.rvAppointment);
+                    Appointment catalog = catalogSnapshot.getValue(Appointment.class);
+                    appointmentList.add(catalog);
+
+                    layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                    appointmentAdapter = new AppointmentAdapter(getActivity(), appointmentList);
+
+                    rvAppointment.setLayoutManager(layoutManager);
+
+                    rvAppointment.setAdapter(appointmentAdapter);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+        fabAddApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddAppointmentActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

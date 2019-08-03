@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".AppointmentFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_appoint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?attr/actionBarSize"
+        style="@style/HeaderBar"
+        app:theme="@style/ActionBarThemeOverlay"
+        app:popupTheme="@style/ActionBarPopupThemeOverlay"
+        android:elevation="4dp"
+        android:background="@color/colorPrimary"
+        />
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabAddApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/ic_add_black_24dp"
+        />
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/rvAppointment"
+        android:layout_below="@+id/toolbar_appoint" />
+
+</RelativeLayout>
