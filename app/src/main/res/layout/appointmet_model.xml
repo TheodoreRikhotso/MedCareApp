@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#FFFF"
+    android:id="@+id/relativeL"
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+
+   >
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+
+
+        card_view:cardCornerRadius="6dp">
+
+        <RelativeLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        <LinearLayout
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+
+            <ImageView
+                android:id="@+id/imageButton2"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:background="@android:color/transparent"
+                app:srcCompat="@drawable/ic_appointment_scheduling" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+
+            android:id="@+id/relativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+
+            android:layout_marginBottom="10dp"
+
+            >
+
+
+            <TextView
+
+                android:id="@+id/tvClinic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="18dp"
+                android:text="Title"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvClinic"
+                android:layout_alignStart="@+id/tvClinic"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="17dp"
+
+                android:text="Product Status: "
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvTime"
+                android:layout_alignStart="@+id/tvTime"
+                android:layout_marginStart="-12dp"
+                android:layout_marginTop="13dp"
+                android:text="Availabel/Unavailable"
+                android:textColor="#9CD65F"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignStart="@+id/tvDate"
+                android:layout_alignBottom="@+id/tvClinic"
+                android:layout_marginStart="-26dp"
+                android:layout_marginBottom="-65dp"
+                android:background="@drawable/ic_date" />
+
+            <android.support.v7.widget.AppCompatImageButton
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignStart="@+id/tvTime"
+                android:layout_alignBottom="@+id/tvDate"
+
+                android:layout_marginStart="-36dp"
+                android:layout_marginBottom="33dp"
+                android:background="@drawable/ic_time" />
+            <Button
+android:layout_below="@id/tvDate"
+                android:layout_width="200dp"
+                android:gravity="center"
+android:layout_marginTop="10dp"
+                android:layout_height="30dp"
+                android:text="call"
+                android:background="@drawable/app_model_btn"/>
+
+        </RelativeLayout>
+
+
+
+</RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+</RelativeLayout>
