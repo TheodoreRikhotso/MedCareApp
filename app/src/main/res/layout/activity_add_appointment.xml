@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddAppointmentActivity">
+    android:scrollbars="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Appointment"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <Spinner
+            android:id="@+id/spinnerClinc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"/>
+        <EditText
+            android:id="@+id/etAppDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="02-06-2019"
+            android:clickable="true"
+            android:editable="false"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/colorPrimaryDark"/>
+        <RadioGroup
+            android:id="@+id/rgTime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/respondent_gender_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton
+                android:id="@+id/rbFirst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7.45am - 4.15pm"
+                android:checked="false"
+                android:buttonTint="@color/colorPrimaryDark" />
+            <RadioButton
+                android:id="@+id/rbSecond"
+                android:checked="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7.45am - 12.30pm"
+
+                android:buttonTint="@color/colorPrimaryDark"/>
+        </RadioGroup>
+
+        <Button
+
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Submit"
+            android:textAllCaps="false"
+
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="4dp"
+            />
+    </LinearLayout>
+</ScrollView>

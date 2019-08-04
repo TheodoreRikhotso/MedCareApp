@@ -50,7 +50,7 @@ public class AppointmentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view=inflater.inflate(R.layout.fragment_appointmet, container, false);
+        view=inflater.inflate(R.layout.fragment_appointment, container, false);
         toolbar = view.findViewById(R.id.toolbar_appoint);
         fabAddApp= view.findViewById(R.id.fabAddApp);
 
